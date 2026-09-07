@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 	func main() {
 		var workArray [10]uint8
@@ -315,19 +317,38 @@ func main() {
 	fmt.Printf("%d часа %d минут %d секунд", x, y, z)
 }*/
 func main() {
-
+	price := 100
+	x := true
+	y := false
+	name := "Sprit"
+	coll := 2
+	age := 18
+	rating := 16
+	fmt.Println(formatReceipt(name, coll, ticketPrice(price, x, y)))
+	fmt.Println(isAllowed(age, rating))
 }
-func ticketPrice(a int, x bool, y bool) int {
+func ticketPrice(price int, x bool, y bool) int {
 	if x == true && y == true {
-		a = a + 50 + 100
-		return a
+		price = price + 50 + 100
+		return price
 	} else if x == true {
-		a = a + 50
-		return a
+		price = price + 50
+		return price
 	} else if y == true {
-		a = a + 100
-		return a
+		price = price + 100
+		return price
 	} else {
-		return a
+		return price
+	}
+}
+func formatReceipt(name string, coll int, price int) (string, int) {
+	price = price * coll
+	return fmt.Sprintf("Вы купили билеты в колличестве: %d шт. на фильм %v. Общаястоимость:", coll, name), price
+}
+func isAllowed(age int, rating int) bool {
+	if age >= rating {
+		return true
+	} else {
+		return false
 	}
 }
