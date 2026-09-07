@@ -1,9 +1,8 @@
 package main
 
-/*
 import "fmt"
 
-
+/*
 	func main() {
 		var workArray [10]uint8
 		var x, y, a uint8
@@ -310,3 +309,11 @@ func fibonacci(n int) int {
 	return sum
 }
 */
+func main() {
+	second := 8520
+	var x, y, z int
+	x = second / 3600
+	y = (second % 3600) / 60
+	z = second % 60
+	fmt.Printf("%d часа %d минут %d секунд", x, y, z)
+}
