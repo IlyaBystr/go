@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 /*
 	func main() {
 		var workArray [10]uint8
@@ -308,7 +306,6 @@ func fibonacci(n int) int {
 	}
 	return sum
 }
-*/
 func main() {
 	second := 8520
 	var x, y, z int
@@ -316,4 +313,21 @@ func main() {
 	y = (second % 3600) / 60
 	z = second % 60
 	fmt.Printf("%d часа %d минут %d секунд", x, y, z)
+}*/
+func main() {
+
+}
+func ticketPrice(a int, x bool, y bool) int {
+	if x == true && y == true {
+		a = a + 50 + 100
+		return a
+	} else if x == true {
+		a = a + 50
+		return a
+	} else if y == true {
+		a = a + 100
+		return a
+	} else {
+		return a
+	}
 }
