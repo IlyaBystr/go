@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 /*
 	func main() {
 		var workArray [10]uint8
@@ -315,7 +313,7 @@ func main() {
 	y = (second % 3600) / 60
 	z = second % 60
 	fmt.Printf("%d часа %d минут %d секунд", x, y, z)
-}*/
+}
 func main() {
 	price := 100
 	x := true
@@ -351,4 +349,21 @@ func isAllowed(age int, rating int) bool {
 	} else {
 		return false
 	}
+}
+func main() {
+	age := 14
+	typepod := "free"
+	ban := false
+	raitingFilm := 16
+
+	if ban == false && age >= raitingFilm && typepod == "premium" {
+		fmt.Println("Приятного просмотра!")
+	} else if ban == false && age >= raitingFilm && typepod == "free" {
+		fmt.Println("Доступно с рекламой")
+	} else {
+		fmt.Println("Фильм недоступен")
+	}
+}*/
+func main() {
+
 }
