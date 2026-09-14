@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 	func main() {
 		var workArray [10]uint8
@@ -377,3 +379,29 @@ func main() {
 	}
 
 }*/
+func main() {
+	/*foo := 23
+	println(foo)
+	pointerFoo := &foo
+	println(pointerFoo)
+	println(*pointerFoo)
+	*pointerFoo = 10
+	println(foo)
+	println(pointerFoo)*/
+
+	a := 4
+	v := 2
+	test(&a, &v)
+}
+
+/*func squareVal(v *int) {
+	square := *v * *v
+	*v = square
+}
+func test(x1 *int, x2 *int) {
+	*x1 = *x1 * *x2
+}*/
+func test(x1 *int, x2 *int) {
+	*x1, *x2 = *x2, *x1
+	fmt.Println(*x1, *x2)
+}
