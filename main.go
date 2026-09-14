@@ -363,7 +363,17 @@ func main() {
 	} else {
 		fmt.Println("Фильм недоступен")
 	}
-}*/
+}
 func main() {
 
-}
+	film := []string{"Дюна", "Матрица", "Начало", "Аватар"}
+	time := []string{"10:00", "13:00", "16:00", "19:00"}
+
+	for zal := 1; zal <= 3; zal++ {
+		for idx, g := range time {
+			fmt.Println(zal, g, film[idx])
+
+		}
+	}
+
+}*/
