@@ -463,22 +463,29 @@ func main() {
 		}
 
 }
-*/
-func main() {
-	var text string
-	fmt.Scan(&text)
-	rs := []rune(text)
-	Uns := true
-	for i, j := 0, len(rs)-1; i < j; i, j = i+1, j-1 {
-		if rs[i] != rs[j] {
-			Uns = false
-			break
+
+	func main() {
+		var text string
+		fmt.Scan(&text)
+		rs := []rune(text)
+		Uns := true
+		for i, j := 0, len(rs)-1; i < j; i, j = i+1, j-1 {
+			if rs[i] != rs[j] {
+				Uns = false
+				break
+			}
+		}
+		if Uns == true {
+			fmt.Println("Полиндром")
+		} else {
+			fmt.Println(strings.ToLower(text))
+
 		}
 	}
-	if Uns == true {
-		fmt.Println("Полиндром")
-	} else {
-		fmt.Println(strings.ToLower(text))
+*/
+func main() {
+	var x, s string
+	fmt.Scan(&x, &s)
+	fmt.Println(strings.Index(x, s))
 
-	}
 }
