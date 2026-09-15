@@ -1,5 +1,13 @@
 package main
 
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+	"unicode"
+)
+
 /*
 	func main() {
 		var workArray [10]uint8
@@ -186,21 +194,23 @@ package main
 			fmt.Println("NO")
 		}
 	}
-func main() {
-	var a int
-	fmt.Scan(&a)
 
-	if 5 > a && a < 20 {
-		fmt.Printf("%d korov", a)
-	} else if a%10 == 1 {
-		fmt.Printf("%d korova", a)
-	} else if a%10 == 2 || a%10 == 3 || a%10 == 4 {
-		fmt.Printf("%d korovy", a)
-	} else {
-		fmt.Printf("%d korov", a)
-	}
+	func main() {
+		var a int
+		fmt.Scan(&a)
+
+		if 5 > a && a < 20 {
+			fmt.Printf("%d korov", a)
+		} else if a%10 == 1 {
+			fmt.Printf("%d korova", a)
+		} else if a%10 == 2 || a%10 == 3 || a%10 == 4 {
+			fmt.Printf("%d korovy", a)
+		} else {
+			fmt.Printf("%d korov", a)
+		}
 
 }
+
 	func main() {
 		var a int
 		fmt.Scan(&a)
@@ -290,80 +300,89 @@ func main() {
 		}
 		return res
 	}
-func main() {
-	var n int
-	fmt.Scan(&n)
-	fmt.Println(fibonacci(n))
-}
-func fibonacci(n int) int {
-	var sum = 1
-	var a = 1
-	var j = 1
-	for i := 1; i < n-1; i++ {
-		sum = a + j
-		a = j
-		j = sum
-	}
-	return sum
-}
-func main() {
-	second := 8520
-	var x, y, z int
-	x = second / 3600
-	y = (second % 3600) / 60
-	z = second % 60
-	fmt.Printf("%d часа %d минут %d секунд", x, y, z)
-}
-func main() {
-	price := 100
-	x := true
-	y := false
-	name := "Sprit"
-	coll := 2
-	age := 18
-	rating := 16
-	fmt.Println(formatReceipt(name, coll, ticketPrice(price, x, y)))
-	fmt.Println(isAllowed(age, rating))
-}
-func ticketPrice(price int, x bool, y bool) int {
-	if x == true && y == true {
-		price = price + 50 + 100
-		return price
-	} else if x == true {
-		price = price + 50
-		return price
-	} else if y == true {
-		price = price + 100
-		return price
-	} else {
-		return price
-	}
-}
-func formatReceipt(name string, coll int, price int) (string, int) {
-	price = price * coll
-	return fmt.Sprintf("Вы купили билеты в колличестве: %d шт. на фильм %v. Общаястоимость:", coll, name), price
-}
-func isAllowed(age int, rating int) bool {
-	if age >= rating {
-		return true
-	} else {
-		return false
-	}
-}
-func main() {
-	age := 14
-	typepod := "free"
-	ban := false
-	raitingFilm := 16
 
-	if ban == false && age >= raitingFilm && typepod == "premium" {
-		fmt.Println("Приятного просмотра!")
-	} else if ban == false && age >= raitingFilm && typepod == "free" {
-		fmt.Println("Доступно с рекламой")
-	} else {
-		fmt.Println("Фильм недоступен")
+	func main() {
+		var n int
+		fmt.Scan(&n)
+		fmt.Println(fibonacci(n))
 	}
-}
+
+	func fibonacci(n int) int {
+		var sum = 1
+		var a = 1
+		var j = 1
+		for i := 1; i < n-1; i++ {
+			sum = a + j
+			a = j
+			j = sum
+		}
+		return sum
+	}
+
+	func main() {
+		second := 8520
+		var x, y, z int
+		x = second / 3600
+		y = (second % 3600) / 60
+		z = second % 60
+		fmt.Printf("%d часа %d минут %d секунд", x, y, z)
+	}
+
+	func main() {
+		price := 100
+		x := true
+		y := false
+		name := "Sprit"
+		coll := 2
+		age := 18
+		rating := 16
+		fmt.Println(formatReceipt(name, coll, ticketPrice(price, x, y)))
+		fmt.Println(isAllowed(age, rating))
+	}
+
+	func ticketPrice(price int, x bool, y bool) int {
+		if x == true && y == true {
+			price = price + 50 + 100
+			return price
+		} else if x == true {
+			price = price + 50
+			return price
+		} else if y == true {
+			price = price + 100
+			return price
+		} else {
+			return price
+		}
+	}
+
+	func formatReceipt(name string, coll int, price int) (string, int) {
+		price = price * coll
+		return fmt.Sprintf("Вы купили билеты в колличестве: %d шт. на фильм %v. Общаястоимость:", coll, name), price
+	}
+
+	func isAllowed(age int, rating int) bool {
+		if age >= rating {
+			return true
+		} else {
+			return false
+		}
+	}
+
+	func main() {
+		age := 14
+		typepod := "free"
+		ban := false
+		raitingFilm := 16
+
+		if ban == false && age >= raitingFilm && typepod == "premium" {
+			fmt.Println("Приятного просмотра!")
+		} else if ban == false && age >= raitingFilm && typepod == "free" {
+			fmt.Println("Доступно с рекламой")
+		} else {
+			fmt.Println("Фильм недоступен")
+		}
+	}
+
 func main() {
 
 	film := []string{"Дюна", "Матрица", "Начало", "Аватар"}
@@ -377,56 +396,73 @@ func main() {
 	}
 
 }
-func main() {
-	foo := 23
-	println(foo)
-	pointerFoo := &foo
-	println(pointerFoo)
-	println(*pointerFoo)
-	*pointerFoo = 10
-	println(foo)
-	println(pointerFoo)
 
-	a := 4
-	v := 2
-	test(&a, &v)
-}
-func squareVal(v *int) {
-	square := *v * *v
-	*v = square
-}
-func test(x1 *int, x2 *int) {
-	*x1 = *x1 * *x2
-}
-func test(x1 *int, x2 *int) {
-	*x1, *x2 = *x2, *x1
-	fmt.Println(*x1, *x2)
-}
-type Human struct {
-	On    bool
-	Ammo  int
-	Power int
-}
+	func main() {
+		foo := 23
+		println(foo)
+		pointerFoo := &foo
+		println(pointerFoo)
+		println(*pointerFoo)
+		*pointerFoo = 10
+		println(foo)
+		println(pointerFoo)
 
-func (h *Human) Shoot() bool {
-	if h.On == true && h.Ammo > 0 {
-		h.Ammo = h.Ammo - 1
-		return true
-	} else {
-		return false
+		a := 4
+		v := 2
+		test(&a, &v)
 	}
-}
-func (h *Human) RideBike() bool {
-	if h.On == true && h.Power > 0 {
-		h.Power = h.Power - 1
-		return true
-	} else {
-		return false
+
+	func squareVal(v *int) {
+		square := *v * *v
+		*v = square
 	}
+
+	func test(x1 *int, x2 *int) {
+		*x1 = *x1 * *x2
+	}
+
+	func test(x1 *int, x2 *int) {
+		*x1, *x2 = *x2, *x1
+		fmt.Println(*x1, *x2)
+	}
+
+	type Human struct {
+		On    bool
+		Ammo  int
+		Power int
+	}
+
+	func (h *Human) Shoot() bool {
+		if h.On == true && h.Ammo > 0 {
+			h.Ammo = h.Ammo - 1
+			return true
+		} else {
+			return false
+		}
+	}
+
+	func (h *Human) RideBike() bool {
+		if h.On == true && h.Power > 0 {
+			h.Power = h.Power - 1
+			return true
+		} else {
+			return false
+		}
+	}
+
+	func main() {
+		h := &Human{}
+		testStruct:= h
+
 }
+*/
 func main() {
-	h := &Human{}
-	testStruct:= h
+	text, _ := bufio.NewReader(os.Stdin).ReadString('\n')
+	text = strings.TrimSpace(text)
+	if unicode.IsUpper([]rune(text)[0]) && strings.HasSuffix(text, ".") {
+		fmt.Println("Right")
+	} else {
+		fmt.Println("Wrong")
+	}
 
-
-}*/
+}
