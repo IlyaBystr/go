@@ -1,11 +1,8 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 	"strings"
-	"unicode"
 )
 
 /*
@@ -455,14 +452,33 @@ func main() {
 		testStruct:= h
 
 }
+
+	func main() {
+		text, _ := bufio.NewReader(os.Stdin).ReadString('\n')
+		text = strings.TrimSpace(text)
+		if unicode.IsUpper([]rune(text)[0]) && strings.HasSuffix(text, ".") {
+			fmt.Println("Right")
+		} else {
+			fmt.Println("Wrong")
+		}
+
+}
 */
 func main() {
-	text, _ := bufio.NewReader(os.Stdin).ReadString('\n')
-	text = strings.TrimSpace(text)
-	if unicode.IsUpper([]rune(text)[0]) && strings.HasSuffix(text, ".") {
-		fmt.Println("Right")
-	} else {
-		fmt.Println("Wrong")
+	var text string
+	fmt.Scan(&text)
+	rs := []rune(text)
+	Uns := true
+	for i, j := 0, len(rs)-1; i < j; i, j = i+1, j-1 {
+		if rs[i] != rs[j] {
+			Uns = false
+			break
+		}
 	}
+	if Uns == true {
+		fmt.Println("Полиндром")
+	} else {
+		fmt.Println(strings.ToLower(text))
 
+	}
 }
