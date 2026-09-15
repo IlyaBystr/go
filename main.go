@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 /*
 	func main() {
 		var workArray [10]uint8
@@ -378,30 +376,57 @@ func main() {
 		}
 	}
 
-}*/
+}
 func main() {
-	/*foo := 23
+	foo := 23
 	println(foo)
 	pointerFoo := &foo
 	println(pointerFoo)
 	println(*pointerFoo)
 	*pointerFoo = 10
 	println(foo)
-	println(pointerFoo)*/
+	println(pointerFoo)
 
 	a := 4
 	v := 2
 	test(&a, &v)
 }
-
-/*func squareVal(v *int) {
+func squareVal(v *int) {
 	square := *v * *v
 	*v = square
 }
 func test(x1 *int, x2 *int) {
 	*x1 = *x1 * *x2
-}*/
+}
 func test(x1 *int, x2 *int) {
 	*x1, *x2 = *x2, *x1
 	fmt.Println(*x1, *x2)
 }
+type Human struct {
+	On    bool
+	Ammo  int
+	Power int
+}
+
+func (h *Human) Shoot() bool {
+	if h.On == true && h.Ammo > 0 {
+		h.Ammo = h.Ammo - 1
+		return true
+	} else {
+		return false
+	}
+}
+func (h *Human) RideBike() bool {
+	if h.On == true && h.Power > 0 {
+		h.Power = h.Power - 1
+		return true
+	} else {
+		return false
+	}
+}
+func main() {
+	h := &Human{}
+	testStruct:= h
+
+
+}*/
