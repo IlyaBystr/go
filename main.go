@@ -1,10 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
-
 /*
 	func main() {
 		var workArray [10]uint8
@@ -482,10 +477,20 @@ func main() {
 
 		}
 	}
-*/
-func main() {
-	var x, s string
-	fmt.Scan(&x, &s)
-	fmt.Println(strings.Index(x, s))
+
+	func main() {
+		var x, s string
+		fmt.Scan(&x, &s)
+		fmt.Println(strings.Index(x, s))
 
 }
+
+func main() {
+	var s string
+	fmt.Scan(&s)
+	for i, c := range s {
+		if i%2 != 0 {
+			fmt.Printf("%c", c)
+		}
+	}
+}*/
