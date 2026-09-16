@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"strings"
+	"unicode"
 )
 
 /*
@@ -499,14 +499,39 @@ func main() {
 			}
 		}
 	}
-func main() {
-	// put your code here							Вывод без повторяющихся символов
-	var a string
-	fmt.Scan(&a)
 
-	for _, ch := range a {
-		if strings.Count(a, string(ch)) == 1 {
-			fmt.Print(string(ch))
+	func main() {
+		// put your code here							Вывод без повторяющихся символов
+		var a string
+		fmt.Scan(&a)
+
+		for _, ch := range a {
+			if strings.Count(a, string(ch)) == 1 {
+				fmt.Print(string(ch))
+			}
 		}
 	}
-}*\
+*/
+func isValidPassword(s string) bool {
+	runes := []rune(s)
+	if len(runes) < 5 {
+		return false
+	}
+
+	for _, r := range runes {
+		if !unicode.Is(unicode.Latin, r) && !unicode.IsDigit(r) {
+			return false
+		}
+	}
+	return true
+}
+func main() {
+	var a string
+	fmt.Scan(&a)
+	if isValidPassword(a) {
+		fmt.Println("Ok")
+	} else {
+		fmt.Println("Wrong password")
+	}
+
+}
