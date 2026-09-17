@@ -636,7 +636,6 @@ func T(w float64) float64 {
 	return t
 }
 func main() {
-
 	var users []string
 
 	var a = []map[int]string{}
@@ -645,6 +644,6 @@ func main() {
 
 	m := make(map[float32]int)
 
-	fmt.Println(users, a, c, m)
+	fmt.Printf("%T, %T, %T, %T ", users, a, c, m)
 
 }*/
