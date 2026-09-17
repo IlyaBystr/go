@@ -1,10 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"unicode"
-)
-
 /*
 	func main() {
 		var workArray [10]uint8
@@ -511,27 +506,145 @@ func main() {
 			}
 		}
 	}
-*/
-func isValidPassword(s string) bool {
-	runes := []rune(s)
-	if len(runes) < 5 {
-		return false
-	}
 
-	for _, r := range runes {
-		if !unicode.Is(unicode.Latin, r) && !unicode.IsDigit(r) {
+	func isValidPassword(s string) bool {
+		runes := []rune(s)
+		if len(runes) < 5 {
 			return false
 		}
-	}
-	return true
-}
-func main() {
-	var a string
-	fmt.Scan(&a)
-	if isValidPassword(a) {
-		fmt.Println("Ok")
-	} else {
-		fmt.Println("Wrong password")
+
+		for _, r := range runes {
+			if !unicode.Is(unicode.Latin, r) && !unicode.IsDigit(r) {
+				return false
+			}
+		}
+		return true
 	}
 
+	func main() {
+		var a string
+		fmt.Scan(&a)
+		if isValidPassword(a) {
+			fmt.Println("Ok")
+		} else {
+			fmt.Println("Wrong password")
+		}
+
 }
+func divide(a int, b int) (int, error) {
+
+		return a / b, nil
+	}
+
+	func main() {
+		var a, b int
+		fmt.Scan(&a, &b)
+		result, error := divide(a, b)
+		if error == nil {
+			fmt.Print(result)
+		} else {
+			fmt.Print("ошибка")
+		}
+
+}
+
+	func main() {
+		defer saveData()
+		fmt.Print("Программа работает;")
+		test(0)
+	}
+
+	func test(a uint8) {
+		if a == 0 {
+			panic("a=0;")
+		}
+	}
+
+	func saveData() {
+		fmt.Print("Сохраняем данные;")
+	}
+
+	func main() {
+		var a uint32 = 5
+		defer specPrint(a)
+		a = 6
+		fmt.Print(a)
+	}
+
+	func specPrint(s uint32) uint32 {
+		fmt.Print(s)
+		s++
+		return s
+	}
+
+	func main() {
+		var a, b int
+		fmt.Scan(&a, &b)
+		fmt.Println(math.Sqrt(float64((a * a) + (b * b))))
+	}
+
+	func main() {
+		var s string
+		fmt.Scan(&s)
+		for i, ch := range s {
+			if i == len(s)-1 {
+				fmt.Printf("%s", string(ch))
+				break
+			} else {
+				fmt.Printf("%s*", string(ch))
+			}
+		}
+	}
+
+	func main() {
+		var s string
+		var max rune
+		fmt.Scan(&s)
+		for _, r := range s {
+			if r > max {
+				max = r
+			}
+
+		}
+		fmt.Println(string(max))
+	}
+
+	func main() {
+		var n string
+		fmt.Scan(&n)
+		for i := 0; i < len(n); i++ {
+			tmp := n[i] - 48
+			fmt.Print(tmp * tmp)
+		}
+	}
+func main() {
+	k := float64(1296)
+	p := float64(6)
+	v := float64(6)
+	fmt.Println(T(W(k, M(p, v))))
+}
+func M(p, v float64) float64 {
+	m := p * v
+	return m
+}
+func W(k, m float64) float64 {
+	w := math.Sqrt(k / m)
+	return w
+}
+func T(w float64) float64 {
+	t := 6 / w
+	return t
+}
+func main() {
+
+	var users []string
+
+	var a = []map[int]string{}
+
+	var c []map[int]int
+
+	m := make(map[float32]int)
+
+	fmt.Println(users, a, c, m)
+
+}*/
