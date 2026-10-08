@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 	func main() {
 		var workArray [10]uint8
@@ -646,4 +648,57 @@ func main() {
 
 	fmt.Printf("%T, %T, %T, %T ", users, a, c, m)
 
+}
+func main() {
+	cache := make(map[int]int)
+	results := make([]int, 0, 10)
+
+	for i := 0; i < 10; i++ {
+		var x int
+		fmt.Scan(&x)
+
+		v, ok := cache[x]
+		if !ok {
+			v = work(x)
+			cache[x] = v
+		}
+		results = append(results, v)
+	}
+
+	for i, v := range results {
+		if i > 0 {
+			fmt.Print(" ")
+		}
+		fmt.Print(v)
+	}
+}
+
+func main() {
+	number := 10
+	pointer := &number
+	fmt.Println(pointer)
+	fmt.Println(*pointer)
 }*/
+
+type User struct {
+	Name        string
+	Age         int
+	Phonenomber string
+	IsClose     bool
+	Rating      float64
+}
+
+func main() {
+	user := User{
+		Name:        "Сергей",
+		Age:         64,
+		Phonenomber: "+7 (925) 512 88-50",
+		IsClose:     true,
+		Rating:      5.6,
+	}
+	fmt.Println("User:", user)
+	fmt.Println("Имя до:", user.Name)
+	user.Name = "Игорь"
+	fmt.Println("Имя после:", user.Name)
+
+}
