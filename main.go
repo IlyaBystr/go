@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 	func main() {
 		var workArray [10]uint8
@@ -646,4 +648,19 @@ func main() {
 
 	fmt.Printf("%T, %T, %T, %T ", users, a, c, m)
 
+}
+func main() {
+	a := 17
+	b := 5
+	remainder := a % b
+	fmt.Println(remainder)
 }*/
+func main() {
+	isL := true
+	isAd := false
+	if isL && isAd {
+		fmt.Println("Доступ в админку разрешён")
+	} else {
+		fmt.Println("Nope")
+	}
+}
